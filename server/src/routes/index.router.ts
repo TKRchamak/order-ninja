@@ -23,10 +23,6 @@ indexRouter.get('/', (req, res) => {
 
 
 indexRouter.use('/login', loginRoute);
-// indexRouter.use('/login', (req, res) => {
-//     res.send('new login route working.');
-// });
-
 indexRouter.use('/register', registrationRouter);
 indexRouter.use('/category', cateogryRouter);
 indexRouter.use('/public', publicRouter);

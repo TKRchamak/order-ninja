@@ -14,9 +14,3 @@ export const handleErrorMessage = (error: any) => {
     }
     return error.message
 }
-
-function handleInputChange(name: string, value: any, setState: any) {
-    return setState((state: any) => ({ ...state, [name]: value }));
-}
-
-export default handleInputChange;

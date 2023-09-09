@@ -4,7 +4,7 @@ import React, { useEffect } from "react";
 import { Button, Checkbox, Form, Input, notification } from "antd";
 import CustomInstance from "../../lib/axios";
 import { AxiosError } from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import { IUserContext } from "../../Interface/IUserContext";
 import {
@@ -54,7 +54,7 @@ const Login: React.FC = () => {
     } catch (error) {
       console.log(error);
       // const err : any = (error as AxiosError).response?.data;
-      const errMsg = handleErrorMessage(error);
+      const errMsg = await handleErrorMessage(error);
       notification.error({
         message: errMsg,
       });
@@ -137,7 +137,7 @@ const Login: React.FC = () => {
           >
             Log in
           </Button>
-          Or <a href="/register">register now!</a>
+          Or <Link to="/register">register now!</Link>
         </Form.Item>
       </Form>
     </div>
